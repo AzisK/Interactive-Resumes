@@ -1,27 +1,35 @@
-var goDesign = document.querySelectorAll('.go-design');
+var goDesign = S('.go-design');
 
-for (var i = 0; i < goDesign.length; i++) {
-  goDesign[i].onclick = function () {
-     scrollIn(designPage);
-     if (!animatedText) {
-      animatedText = true;
-      animateText('#cross-platform', 'Cross-platform', 0, 110);
-     }
-  };
+var goToDesign = function () {
+  scrollIn(designPage);
+  if (!animatedText) {
+    animatedText = true;
+    animateText('#cross-platform', 'Cross-platform', 0, 100);
+ }
 }
 
-var mobile = document.querySelector('.mobile');
-var tablet = document.querySelector('.tablet');
-var desktop = document.querySelector('.desktop');
+for (var i = 0; i < goDesign.length; i++) {
+  goDesign[i].onclick = function () {goToDesign();}
+}
+
+var sikt = S('.mobile');
+
+var mobile = s('.mobile');
+var tablet = s('.tablet');
+var desktop = s('.desktop');
 
 var views = [mobile, tablet, desktop];
 var deviceMode = 'desktop';
 
-var body = document.body;
-var iphoneButton = document.querySelector('.iphone-button');
-var mobileBlocks = document.querySelectorAll('.xs-block');
-var footerLink = document.querySelector('.footer a');
-var touchElements = [html, footerLink];
+var device = s('#device');
+
+var iphoneButton = s('.iphone-button');
+var iphoneSpeaker = s('.iphone-speaker');
+var iphoneCamera = s('.iphone-camera');
+
+var mobileBlocks = S('.xs-block');
+var footerLink = s('.footer a');
+var touchElements = [view, footerLink];
 mobileBlocks.forEach(function (el) {
   touchElements.push(el);
 });
@@ -53,7 +61,7 @@ var mobileView = function (on) {
 
 var touchView = function (on) {
   if (on == 1) {
-    if (!html.classList.contains('touch-cursor')) {
+    if (!view.classList.contains('touch-cursor')) {
       touchElements.forEach(function (el) {
         el.classList.add('touch-cursor');
       });
@@ -67,30 +75,39 @@ var touchView = function (on) {
 
 var responsiveView = function (currentMode, deviceMode) {
   if (currentMode != deviceMode) {
-    body.classList.remove(currentMode);
-    body.classList.add(deviceMode);
+    device.classList.remove(currentMode);
+    device.classList.add(deviceMode);
+    noFit();
 
     if (deviceMode == 'mobile-view') {
       iphoneButton.classList.remove('hidden');
+      iphoneSpeaker.classList.remove('hidden');
+      iphoneCamera.classList.remove('hidden');
       mobileView(1);
       touchView(1);
     }
     if (deviceMode == 'tablet-view') {
       iphoneButton.classList.remove('hidden');
+      iphoneSpeaker.classList.add('hidden');
+      iphoneCamera.classList.remove('hidden');
       mobileView(0);
       touchView(1);
     }
     if (deviceMode == 'desktop-view') {
       iphoneButton.classList.add('hidden');
+      iphoneSpeaker.classList.add('hidden');
+      iphoneCamera.classList.add('hidden');
       mobileView(0);
       touchView(0);
     }
+
+    needFit();
   }
 }
 
-function deviceView (device) {
-  var deviceMode = device.classList[0] + '-view';
-  var currentMode = body.classList[0];
+function deviceView (mode) {
+  var deviceMode = mode.classList[0] + '-view';
+  var currentMode = device.classList[0];
   responsiveView(currentMode, deviceMode);  
   scrollIn(mainPage);
 };

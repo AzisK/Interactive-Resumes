@@ -1,20 +1,25 @@
 var curStartPos, curPos, curDown, moveBy, moveTo;
+var isOnDiv = false;
 
-document.onmousemove = function (e) {
+mapCanvas.addEventListener("mouseenter", function() { isOnDiv=true; });
+mapCanvas.addEventListener("mouseout", function() { isOnDiv=false; });
+
+view.onmousemove = function (e) {
 	if (curDown) {
 		curPos = e.clientY;
 		moveBy = (curStartPos - curPos)*2;
-		moveTo = html.scrollTop + moveBy;
-		html.scrollTop = moveTo;
+		moveTo = view.scrollTop + moveBy;
+		view.scrollTop = moveTo;
 		curStartPos = curPos;
 	}
 }
 
-document.onmousedown = function (e) {
+view.onmousedown = function (e) {
+	if (isOnDiv) { return; }
     curStartPos = e.clientY;
     curDown = true;
 }
 
-document.onmouseup = function (e) {
+view.onmouseup = function (e) {
     curDown = false
 }

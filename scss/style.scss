@@ -1,12 +1,11 @@
 $hover-color: #EC412C;
+$active-color: #eac141;
 $contact-page: #4448C8;
 $design-page: #82BD43;
-$greyviolet: #ACA2D9;
-$device-color: #E5E4ED;
-$resume-height: calc(100% - 120px);
+$background: #471eff;
+$device-color: #eee;
 
 html {
-  background: $greyviolet;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -21,14 +20,14 @@ html, body {
 }
 
 body {
+  background: $background;
   margin: 0;
-  background: $device-color;
   ::-webkit-scrollbar {
     display: none;
   }
 }
 
-* {
+.device, .heading, svg {
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -46,14 +45,13 @@ h2 {
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 32px;
   letter-spacing: 1px;
   font-family: 'Indie Flower', cursive;
 }
 
 .col-30 {
   width: 30%;
-  display: inline-table;
 }
 
 .hidden {
@@ -68,12 +66,21 @@ h3 {
   display: inline-block;
 }
 
-.hover-color-svg {
-  stroke: $hover-color !important;
+.active-svg {
+  stroke: $active-color !important;
 }
 
 .hover-color:hover {
   color: $hover-color;
+}
+
+.fit {
+  position: fixed;
+  top: 0;
+}
+
+svg {
+  width: 24px;
 }
 
 svg.feather {
@@ -127,11 +134,6 @@ svg.feather:hover {
 .footer {
   svg {
     vertical-align: middle;
-    width: 24px;
-
-    path {
-      fill: #000;
-    }
   }
 }
 
@@ -139,12 +141,12 @@ svg.feather:hover {
   width: 42px;
 }
 
-ul {
-  list-style-type: none;
+.list {
   padding: 0;
 
-  li {
-    padding: 2px 10px;
+  div {
+    width: 100%;
+    // border-top: 1px solid;
 
     a {
       text-decoration: none
@@ -156,20 +158,24 @@ ul {
   }
 }
 
-.main-page, .html {
+#device, .view {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-.main-page {
-  background: #111111;
-  color: #fff;
+#device {
+  background: $device-color;
 }
 
-.html {
+.resume {
+  background: #111111;
+}
+
+.view {
   overflow-y: auto;
   background: #fff;
+  color: #fff;
 }
 
 .page {
@@ -178,25 +184,25 @@ ul {
   }
 
   h2 {
+    font-family: 'Indie Flower', cursive;
     position: absolute;
     top: 30px;
     width: 100%;
     margin: auto;
     text-align: center;
-    color: #fff;
   }
 }
 
 .heading {
-  position: absolute;
+  position: relative;
   height: 120px;
   width: 100%;
   text-align: center;
-  background: #244ad6; /* Old browsers */
-  background: -moz-linear-gradient(left,  #244ad6 0%, #19e876 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #244ad6 0%,#19e876 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #244ad6 0%,#19e876 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); /* IE6-9 */
+  background: #244ad6;
+  background: -moz-linear-gradient(left,  #244ad6 0%, #19e876 100%);
+  background: -webkit-linear-gradient(left,  #244ad6 0%,#19e876 100%);
+  background: linear-gradient(to right,  #244ad6 0%,#19e876 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1);
 
   h1, h2 {
     margin: 0;
@@ -210,47 +216,45 @@ ul {
 }
 
 .resume {
-  height: $resume-height;
+  height: 100%;
   width: 100%;
-  top: 120px;
-  position: absolute;
+  position: relative;
+
+  .list {
+    overflow-y: scroll;
+    h3 {
+      margin: 10px 60px;
+    }
+  }
 
   div {
-    ul {
-      overflow-y: scroll;
-      h3 {
-        margin: 10px 0;
-      }
-    }
-
-    div {
-      display: inline-block;
-      vertical-align: middle;
-    }
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
 .resume-nav {
+  width: 100%;
   height: 60px;
+  display: inline-block;
 }
 
 .resume-nav, .resume-content {
   position: relative;
   top: 20px;
-  padding: 0 60px;
   text-align: center;
 }
 
 .resume-content {
   h1 {
-    margin: auto;
+    margin: 0 0 20px 0;
     height: 56px;
   }
 
-  ul {
+  .list {
     text-align: left;
 
-    li:hover {
+    div:hover {
       background: #244ad6;
       background: -moz-linear-gradient(left,  #244ad6 0%, #19e876 100%);
       background: -webkit-linear-gradient(left,  #244ad6 0%,#19e876 100%);
@@ -260,10 +264,30 @@ ul {
   }
 }
 
+.resume-content-nav {
+  position: absolute;
+  width: 100%;
+
+  :first-child {
+    left: 0;
+    position: absolute;
+  }
+
+  :last-child {
+    right: 0;
+    position: absolute;
+  }
+}
+
 .bottom-right {
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
 }
 
 .design-page {
@@ -291,6 +315,7 @@ ul {
 }
 
 .footer {
+  color: #000;
   position: relative;
   width: 100%;
   padding-top: 20px;

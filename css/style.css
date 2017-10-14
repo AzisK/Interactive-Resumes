@@ -1,5 +1,4 @@
 html {
-  background: #ACA2D9;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -12,12 +11,12 @@ html, body {
   width: 100%; }
 
 body {
-  margin: 0;
-  background: #E5E4ED; }
+  background: #471eff;
+  margin: 0; }
   body ::-webkit-scrollbar {
     display: none; }
 
-* {
+.device, .heading, svg {
   transition: 200ms;
   transition-timing-function: ease-in-out; }
 
@@ -32,13 +31,12 @@ h2 {
   font-size: 36px; }
 
 h3 {
-  font-size: 28px;
+  font-size: 32px;
   letter-spacing: 1px;
   font-family: 'Indie Flower', cursive; }
 
 .col-30 {
-  width: 30%;
-  display: inline-table; }
+  width: 30%; }
 
 .hidden {
   display: none; }
@@ -49,11 +47,18 @@ h3 {
 .inline-block {
   display: inline-block; }
 
-.hover-color-svg {
-  stroke: #EC412C !important; }
+.active-svg {
+  stroke: #eac141 !important; }
 
 .hover-color:hover {
   color: #EC412C; }
+
+.fit {
+  position: fixed;
+  top: 0; }
+
+svg {
+  width: 24px; }
 
 svg.feather {
   stroke: #fff;
@@ -87,62 +92,56 @@ svg.feather:hover {
   width: 100px; }
 
 .footer svg {
-  vertical-align: middle;
-  width: 24px; }
-  .footer svg path {
-    fill: #000; }
+  vertical-align: middle; }
 
 .arrow {
   width: 42px; }
 
-ul {
-  list-style-type: none;
+.list {
   padding: 0; }
-  ul li {
-    padding: 2px 10px; }
-    ul li a {
+  .list div {
+    width: 100%; }
+    .list div a {
       text-decoration: none; }
-    ul li a:-webkit-any-link {
+    .list div a:-webkit-any-link {
       color: #c0ffee; }
 
-.main-page, .html {
+#device, .view {
   position: relative;
   height: 100%;
   width: 100%; }
 
-.main-page {
-  background: #111111;
-  color: #fff; }
+#device {
+  background: #eee; }
 
-.html {
+.resume {
+  background: #111111; }
+
+.view {
   overflow-y: auto;
-  background: #fff; }
+  background: #fff;
+  color: #fff; }
 
 .page div :last-child svg {
   margin: 0; }
 .page h2 {
+  font-family: 'Indie Flower', cursive;
   position: absolute;
   top: 30px;
   width: 100%;
   margin: auto;
-  text-align: center;
-  color: #fff; }
+  text-align: center; }
 
 .heading {
-  position: absolute;
+  position: relative;
   height: 120px;
   width: 100%;
   text-align: center;
   background: #244ad6;
-  /* Old browsers */
   background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1);
-  /* IE6-9 */ }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
   .heading h1, .heading h2 {
     margin: 0;
     display: inline-block; }
@@ -151,43 +150,57 @@ ul {
     margin-right: 40px; }
 
 .resume {
-  height: calc(100% - 120px);
+  height: 100%;
   width: 100%;
-  top: 120px;
-  position: absolute; }
-  .resume div ul {
+  position: relative; }
+  .resume .list {
     overflow-y: scroll; }
-    .resume div ul h3 {
-      margin: 10px 0; }
-  .resume div div {
+    .resume .list h3 {
+      margin: 10px 60px; }
+  .resume div {
     display: inline-block;
     vertical-align: middle; }
 
 .resume-nav {
-  height: 60px; }
+  width: 100%;
+  height: 60px;
+  display: inline-block; }
 
 .resume-nav, .resume-content {
   position: relative;
   top: 20px;
-  padding: 0 60px;
   text-align: center; }
 
 .resume-content h1 {
-  margin: auto;
+  margin: 0 0 20px 0;
   height: 56px; }
-.resume-content ul {
+.resume-content .list {
   text-align: left; }
-  .resume-content ul li:hover {
+  .resume-content .list div:hover {
     background: #244ad6;
     background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
     background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
     background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
 
+.resume-content-nav {
+  position: absolute;
+  width: 100%; }
+  .resume-content-nav :first-child {
+    left: 0;
+    position: absolute; }
+  .resume-content-nav :last-child {
+    right: 0;
+    position: absolute; }
+
 .bottom-right {
   position: absolute;
   right: 20px;
   bottom: 20px; }
+
+.map {
+  width: 100%;
+  height: 100%; }
 
 .design-page {
   position: relative;
@@ -208,6 +221,7 @@ ul {
     text-align: center; }
 
 .footer {
+  color: #000;
   position: relative;
   width: 100%;
   padding-top: 20px;

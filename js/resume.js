@@ -1,17 +1,16 @@
-var education = document.querySelector('.education');
-var jobs = document.querySelector('.jobs');
-var life = document.querySelector('.life');
+var education = s('.education');
+var jobs = s('.jobs');
+var life = s('.life');
 
 var modes = [education, jobs, life];
 var currentMode;
 
 function svgSelect (mode) {
-  if (mode != currentMode) {
-    if (document.querySelector('.hover-color-svg')) {
-      document.querySelector('.hover-color-svg').classList.remove('hover-color-svg');
+  if (mode.classList[0] != currentMode) {
+    if (s('.active-svg')) {
+      s('.active-svg').classList.remove('active-svg');
     }
-
-    mode.querySelector('svg').classList.add('hover-color-svg');
+    mode.querySelector('svg').classList.add('active-svg');
   }
 }
 
@@ -26,16 +25,16 @@ function resumeMode (mode) {
   currentMode = mode;
 }
 
-resumeMode('education');
-svgSelect(education);
-
 function addModes () {
   for (var i = 0; i < modes.length; i++) {
     modes[i].onclick = function () {
-      resumeMode(this.classList[0]);
       svgSelect(this);
+      resumeMode(this.classList[0]);
     }
   }
 }
+
+svgSelect(education);
+resumeMode('education');
 
 addModes();

@@ -1,10 +1,7 @@
+//iPhone6 Plus
 @media (max-width: 414px) {
   h1  {
     font-size: 38px;
-  }
-
-  .not-xs-hidden {
-    display: inherit !important;
   }
 
   .heading {
@@ -23,28 +20,35 @@
   }
 
   .resume-nav {
-    height: auto;
+    height: auto
+  }
 
+  .resume-content-nav {
+    > svg {
+      top: 30px;
+      width: 34px;
 
-    :first-child {
-      text-align: left;
-    }
-
-    :last-child {
-      text-align: right;
+      &.feather:hover {
+        width: 34px;
+        stroke: #fff;
+      }
     }
   }
 
   .resume-content {
-    padding: 0 20px;
-
-    ul {
+    .list {
       text-align: center;
-
-      li {
+      h3 {
+        margin: 5px 30px;
+      }
+      div {
         display: none;
       }
     }
+  }
+
+  .active-mobile {
+    background: linear-gradient(to right,  #244ad6 0%,#19e876 100%);
   }
 
   .iphone-button {
@@ -58,11 +62,5 @@
   .mobile-svg {
   	margin-right: 0 !important;
   	margin-bottom: 40px;
-  }
-}
-
-@media (max-height: 678px) {
-  .mobile-view {
-    transform: none;
   }
 }

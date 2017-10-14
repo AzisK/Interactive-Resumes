@@ -1,4 +1,4 @@
-var listElement = document.querySelector('.js-list');
+var listElement = s('.js-list');
 
 function educationList () {
   var educationList = [];

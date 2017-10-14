@@ -1,7 +1,9 @@
-$iphone-button-color: #D4D2DA;
+
+$iphone-camera-background: #a2a2a2;
+$iphone-camera-border: 2px solid rgba(255, 255, 255, 0.6);
 $iphone-button-border-color: #9E9DA3;
-$press-button-color: #5C5A69;
-$device-color: #E5E4ED;
+$iphone-button-border: 1px solid $iphone-button-border-color;
+$press-button-color: #E7E7E7;
 
 .touch-cursor {
   cursor: url(../img/touch-cursor.svg) 12 12, auto;
@@ -22,28 +24,60 @@ $device-color: #E5E4ED;
   margin-bottom: 40px;
 }
 
-.iphone-button {
-  width: 40px;
-  height: 40px;
+.iphone-camera {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border: $iphone-camera-border;
+  background: $iphone-camera-background;
   border-radius: 100%;
-  border: 4px solid $iphone-button-border-color;
-  background: $iphone-button-color;
+}
+
+.iphone-speaker {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 6px;
+  background: #B1B1B1;
+  border-top: $iphone-button-border;
+  border-radius: 50px;
+  border-left: $iphone-button-border;
+  border-right: $iphone-button-border;
+}
+
+.iphone-button {
+  position: relative;
+  top: 8px;
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  border: $iphone-button-border;
+  background: #1e5799;
+  background: -moz-linear-gradient(45deg, #1e5799 0%, #ddd 0%, #fff 100%);
+  background: -webkit-linear-gradient(45deg, #1e5799 0%, #ddd 0%, #fff 100%);
+  background: linear-gradient(45deg, #1e5799 0%, #ddd 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#fff', GradientType=1); 
   margin: auto;
-  margin-top: 4px;
+
+  .inside {
+    top: 13px;
+    left: 13px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #B0B5B8;
+    border-radius: 4px;
+    position: absolute;
+    margin: auto;
+  }
 }
 
 .iphone-button:hover {
   background: $press-button-color;
-}
-
-.mobile-view {
-  width: 320px;
-  height: 568px;
-  margin: auto;
-  border: 8px solid $device-color;
-  border-radius: 10px;
-  padding-bottom: 50px;
-  transform: translateY(50px);
 }
 
 .mobile-heading {
@@ -51,11 +85,29 @@ $device-color: #E5E4ED;
   display: block !important;
 }
 
-.tablet-view {
-  width: 768px;
-  height: 1024px;
+.mobile-view {
+  width: 320px !important;
+  height: 568px !important;
   margin: auto;
-  border: 8px solid $device-color;
+  border-radius: 40px;
+  padding: 70px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tablet-view {
+  width: 768px !important;
+  height: 1024px !important;
+  margin: auto;
   border-radius: 10px;
-  padding-bottom: 50px;
+  padding: 70px 14px;
+  padding-top: 60px;
+}
+
+// iPhone5 size
+@media (max-height: 708px) {
+  .mobile-view {
+    top: 0;
+    transform: none;
+  }
 }

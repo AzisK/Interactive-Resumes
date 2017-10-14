@@ -2,9 +2,6 @@
   h1 {
     font-size: 38px; }
 
-  .not-xs-hidden {
-    display: inherit !important; }
-
   .heading h1, .heading h2 {
     margin: 0;
     display: block; }
@@ -16,17 +13,23 @@
 
   .resume-nav {
     height: auto; }
-    .resume-nav :first-child {
-      text-align: left; }
-    .resume-nav :last-child {
-      text-align: right; }
 
-  .resume-content {
-    padding: 0 20px; }
-    .resume-content ul {
-      text-align: center; }
-      .resume-content ul li {
-        display: none; }
+  .resume-content-nav > svg {
+    top: 30px;
+    width: 34px; }
+    .resume-content-nav > svg.feather:hover {
+      width: 34px;
+      stroke: #fff; }
+
+  .resume-content .list {
+    text-align: center; }
+    .resume-content .list h3 {
+      margin: 5px 30px; }
+    .resume-content .list div {
+      display: none; }
+
+  .active-mobile {
+    background: linear-gradient(to right, #244ad6 0%, #19e876 100%); }
 
   .iphone-button {
     display: none; }
@@ -37,8 +40,5 @@
   .mobile-svg {
     margin-right: 0 !important;
     margin-bottom: 40px; } }
-@media (max-height: 678px) {
-  .mobile-view {
-    transform: none; } }
 
 /*# sourceMappingURL=style-mobile.css.map */

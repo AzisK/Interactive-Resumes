@@ -3,10 +3,10 @@ var list = function (list) {
   var template = '';
   for (var i = 0; i < e.length; i++) {
     template +=
-      '<li>'
-        + '<h3>' + e[i].name + ' @ ' + e[i].placeLink
+      '<div class="active-mobile">'
+        + '<h3>' + ': ' + e[i].name + ' @ ' + e[i].placeLink
         + e[i].place + '</a>' + e[i].time + '</h3>'
-      + '</li>';
+      + '</div>';
   }
   return template;
 }
