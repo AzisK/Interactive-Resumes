@@ -9,7 +9,7 @@ var scrollIn = function (div) {
   div.scrollIntoView({ behavior: "smooth"});
 };
 
-var animateText = function (target, message, index, interval) { 
+function animateText (target, message, index, interval) { 
   var targetSelector = s(target);
   if (index < message.length) {
     targetSelector.append(message[index++]);

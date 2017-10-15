@@ -1,4 +1,10 @@
-var places = [ { lat: -25.363, lng: 131.044 }, { lat: 24, lng: 100 } ];
+var places = [ 
+  { lat: 54.898991, lng: 23.912825 }, 
+  { lat: 45.658667, lng: 13.7934477 }, 
+  { lat: 39.8746, lng: 32.7476 }, 
+  { lat: 39.32934, lng: 16.2420148 },
+  { lat: 21.2795532, lng: -157.8301075 } 
+];
 var center = { lat: 0, lng: 0 };
 for (var i = 0; i < places.length; i++) {
   center.lat += places[i].lat/places.length;

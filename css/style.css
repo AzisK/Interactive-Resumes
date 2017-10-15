@@ -92,6 +92,7 @@ svg.feather:hover {
   width: 100px; }
 
 .footer svg {
+  stroke: #948dff;
   vertical-align: middle; }
 
 .arrow {
@@ -179,17 +180,19 @@ svg.feather:hover {
   top: 20px;
   text-align: center; }
 
-.resume-content h1 {
-  margin: 0 0 20px 0;
-  height: 56px; }
-.resume-content .list {
-  text-align: left; }
-  .resume-content .list div:hover {
-    background: #244ad6;
-    background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
-    background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
-    background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
+.resume-content {
+  width: 100%; }
+  .resume-content h1 {
+    margin: 0 0 20px 0;
+    height: 56px; }
+  .resume-content .list {
+    text-align: left; }
+    .resume-content .list div:hover {
+      background: #244ad6;
+      background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
+      background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
+      background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
 
 .resume-content-nav {
   position: absolute;
@@ -208,7 +211,7 @@ svg.feather:hover {
 
 .map {
   width: 100%;
-  height: 100%; }
+  height: 80%; }
 
 .design-page {
   position: relative;
