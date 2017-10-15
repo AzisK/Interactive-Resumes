@@ -154,8 +154,8 @@ svg.feather:hover {
   .heading h1, .heading h2 {
     margin: 0;
     display: inline-block; }
-  .heading h1 {
-    margin-right: 40px; }
+  .heading h2 {
+    margin-left: 40px; }
 
 .resume {
   height: auto;
