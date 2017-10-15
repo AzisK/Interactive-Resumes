@@ -106,7 +106,7 @@ svg.feather:hover {
     .list div svg, .list div svg.feather:hover {
       width: 32px; }
     .list div svg {
-      vertical-align: middle; }
+      vertical-align: text-bottom; }
     .list div a {
       text-decoration: none; }
     .list div a:-webkit-any-link {
@@ -159,10 +159,12 @@ svg.feather:hover {
   height: 100%;
   width: 100%;
   position: relative; }
-  .resume .list {
-    overflow-y: scroll; }
-    .resume .list h3 {
-      margin: 10px 60px; }
+  .resume .list div {
+    padding: 10px 0; }
+  .resume .list h3 {
+    margin: 0 0 0 20px; }
+  .resume .list svg {
+    margin-left: 30px; }
   .resume div {
     display: inline-block;
     vertical-align: middle; }
