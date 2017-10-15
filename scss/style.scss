@@ -146,6 +146,16 @@ svg.feather:hover {
 
   div {
     width: 100%;
+    svg, h3 {
+      display: inline-block;
+    }
+    svg, svg.feather:hover {
+      width: 32px;
+    }
+    svg {
+      vertical-align: middle
+    }
+
     // border-top: 1px solid;
 
     a {
@@ -153,7 +163,7 @@ svg.feather:hover {
     }
 
     a:-webkit-any-link {
-      color: #c0ffee;
+      color: #948dff;
     }
   }
 }

@@ -101,10 +101,16 @@ svg.feather:hover {
   padding: 0; }
   .list div {
     width: 100%; }
+    .list div svg, .list div h3 {
+      display: inline-block; }
+    .list div svg, .list div svg.feather:hover {
+      width: 32px; }
+    .list div svg {
+      vertical-align: middle; }
     .list div a {
       text-decoration: none; }
     .list div a:-webkit-any-link {
-      color: #c0ffee; }
+      color: #948dff; }
 
 #device, .view {
   position: relative;

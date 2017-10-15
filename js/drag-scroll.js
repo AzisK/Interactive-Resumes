@@ -1,10 +1,11 @@
 var curStartPos, curPos, curDown, moveBy, moveTo;
-var isOnDiv = false;
+var isOnMap = false;
 
-mapCanvas.addEventListener("mouseenter", function() { isOnDiv=true; });
-mapCanvas.addEventListener("mouseout", function() { isOnDiv=false; });
+mapCanvas.addEventListener("mouseenter", function() { isOnMap = true; });
+mapCanvas.addEventListener("mouseout", function() { isOnMap = false; });
 
 view.onmousemove = function (e) {
+	if (isOnMap) { return; }
 	if (curDown) {
 		curPos = e.clientY;
 		moveBy = (curStartPos - curPos)*2;
@@ -15,7 +16,7 @@ view.onmousemove = function (e) {
 }
 
 view.onmousedown = function (e) {
-	if (isOnDiv) { return; }
+	if (isOnMap) { return; }
     curStartPos = e.clientY;
     curDown = true;
 }
