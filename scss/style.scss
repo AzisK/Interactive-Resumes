@@ -5,6 +5,7 @@ $design-page: #82BD43;
 $background: #471eff;
 $device-color: #eee;
 $enhanced-text: #948dff;
+$black: #111111;
 
 html {
   -webkit-touch-callout: none;
@@ -37,6 +38,11 @@ h1 {
   font-size: 42px;
   letter-spacing: 2px;
   font-family: 'Indie Flower', cursive;
+}
+
+p {
+  font-size: 22px;
+  font-family: 'Indie Flower';
 }
 
 h2 {
@@ -146,19 +152,20 @@ svg.feather:hover {
 .list {
   padding: 0;
 
-  div {
+  .list-item {
     width: 100%;
+
     svg, h3 {
       display: inline-block;
     }
+
     svg, svg.feather:hover {
       width: 32px;
     }
+
     svg {
       vertical-align: text-bottom;
     }
-
-    // border-top: 1px solid;
 
     a {
       text-decoration: none
@@ -180,13 +187,9 @@ svg.feather:hover {
   background: $device-color;
 }
 
-.resume {
-  background: #111111;
-}
-
 .view {
   overflow-y: auto;
-  background: #fff;
+  background: $black;
   color: #fff;
 }
 
@@ -228,9 +231,11 @@ svg.feather:hover {
 }
 
 .resume {
-  height: 100%;
+  height: auto;
   width: 100%;
   position: relative;
+  background: $black;
+  padding-bottom: 20px;
 
   .list {
     div {
@@ -261,6 +266,10 @@ svg.feather:hover {
   text-align: center;
 }
 
+.pulse:active {
+  animation: none;
+}
+
 .resume-content {
   width: 100%;
 
@@ -272,12 +281,23 @@ svg.feather:hover {
   .list {
     text-align: left;
 
-    div:hover {
+    .list-item:hover {
       background: #244ad6;
       background: -moz-linear-gradient(left,  #244ad6 0%, #19e876 100%);
       background: -webkit-linear-gradient(left,  #244ad6 0%,#19e876 100%);
       background: linear-gradient(to right,  #244ad6 0%,#19e876 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1);
+    }
+
+    div.description {
+      background: #dcdcdc;
+      width: 100%;
+      display: none;
+
+      p {
+        margin-left: 30px;
+        color: #000;
+      }
     }
   }
 }
@@ -301,6 +321,16 @@ svg.feather:hover {
   position: absolute;
   right: 20px;
   bottom: 20px;
+}
+
+.map-heading {
+  position: relative;
+  background: #9CCAFF;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .map {
@@ -334,6 +364,7 @@ svg.feather:hover {
 
 .footer {
   color: #000;
+  background: #fff;
   position: relative;
   width: 100%;
   padding-top: 20px;

@@ -25,6 +25,10 @@ h1 {
   letter-spacing: 2px;
   font-family: 'Indie Flower', cursive; }
 
+p {
+  font-size: 22px;
+  font-family: 'Indie Flower'; }
+
 h2 {
   letter-spacing: 2px;
   font-family: 'Pangolin', cursive;
@@ -100,17 +104,17 @@ svg.feather:hover {
 
 .list {
   padding: 0; }
-  .list div {
+  .list .list-item {
     width: 100%; }
-    .list div svg, .list div h3 {
+    .list .list-item svg, .list .list-item h3 {
       display: inline-block; }
-    .list div svg, .list div svg.feather:hover {
+    .list .list-item svg, .list .list-item svg.feather:hover {
       width: 32px; }
-    .list div svg {
+    .list .list-item svg {
       vertical-align: text-bottom; }
-    .list div a {
+    .list .list-item a {
       text-decoration: none; }
-    .list div a:-webkit-any-link {
+    .list .list-item a:-webkit-any-link {
       color: #948dff; }
 
 #device, .view {
@@ -121,12 +125,9 @@ svg.feather:hover {
 #device {
   background: #eee; }
 
-.resume {
-  background: #111111; }
-
 .view {
   overflow-y: auto;
-  background: #fff;
+  background: #111111;
   color: #fff; }
 
 .page div :last-child svg {
@@ -157,9 +158,11 @@ svg.feather:hover {
     margin-right: 40px; }
 
 .resume {
-  height: 100%;
+  height: auto;
   width: 100%;
-  position: relative; }
+  position: relative;
+  background: #111111;
+  padding-bottom: 20px; }
   .resume .list div {
     padding: 10px 0; }
   .resume .list h3 {
@@ -180,6 +183,9 @@ svg.feather:hover {
   top: 20px;
   text-align: center; }
 
+.pulse:active {
+  animation: none; }
+
 .resume-content {
   width: 100%; }
   .resume-content h1 {
@@ -187,12 +193,19 @@ svg.feather:hover {
     height: 56px; }
   .resume-content .list {
     text-align: left; }
-    .resume-content .list div:hover {
+    .resume-content .list .list-item:hover {
       background: #244ad6;
       background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
       background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
       background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
+    .resume-content .list div.description {
+      background: #dcdcdc;
+      width: 100%;
+      display: none; }
+      .resume-content .list div.description p {
+        margin-left: 30px;
+        color: #000; }
 
 .resume-content-nav {
   position: absolute;
@@ -208,6 +221,13 @@ svg.feather:hover {
   position: absolute;
   right: 20px;
   bottom: 20px; }
+
+.map-heading {
+  position: relative;
+  background: #9CCAFF;
+  text-align: center; }
+  .map-heading h1 {
+    margin: 0; }
 
 .map {
   width: 100%;
@@ -233,6 +253,7 @@ svg.feather:hover {
 
 .footer {
   color: #000;
+  background: #fff;
   position: relative;
   width: 100%;
   padding-top: 20px;

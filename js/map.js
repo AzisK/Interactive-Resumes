@@ -12,7 +12,6 @@ for (var i = 0; i < places.length; i++) {
 }
 
 var map;
-var layer = "toner";
 
 function initMap() {
   map = new google.maps.Map(mapCanvas, {
