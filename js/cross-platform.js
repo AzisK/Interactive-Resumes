@@ -49,14 +49,6 @@ var mobileView = function (on) {
       }
     }
   });
-  var heading = document.querySelector('.heading h1');
-  if (mobile) {
-    heading.classList.add('mobile-heading');
-  } else {
-    if (heading.classList.contains('mobile-heading')) {
-      heading.classList.remove('mobile-heading');
-    }
-  }
 }
 
 var touchView = function (on) {
