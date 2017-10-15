@@ -1,4 +1,9 @@
-var plusSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="feather"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>';
+var polylineDown = '<polyline points="6 9 12 15 18 9"></polyline>';
+var chevron = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="feather">';
+var chevronDown =  chevron + polylineDown + '</svg>';
+
+var polylineUp = '<polyline points="18 15 12 9 6 15"></polyline>';
+var chevronUp = chevron + polylineUp + '</svg>;'
 
 var list = function (list) {
   var e = list;
@@ -6,7 +11,7 @@ var list = function (list) {
   for (var i = 0; i < e.length; i++) {
     template +=
       '<div class="list-item">'
-        + plusSvg + '<h3>' + e[i].name + e[i].placeLink
+        + chevronDown + '<h3>' + e[i].name + e[i].placeLink
         + e[i].place + '</a>' + e[i].time + '</h3>'
       + '</div>' 
       + '<div class="description">' + '<p>' + e[i].description + '</p>'

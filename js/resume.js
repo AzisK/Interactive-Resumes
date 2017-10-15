@@ -20,13 +20,13 @@ function showDescription () {
   for (var i = 0; i < listItems.length; i++) {
     listItems[i].onclick = function () {
       var descriptionNode = this.parentNode.childNodes[indexInParent(this) + 1];
-      var svg = this.querySelector('line');
+      var svg = this.querySelector('svg');
       if (!descriptionNode.style.display || descriptionNode.style.display == 'none') {
         descriptionNode.style.display = 'inherit';
-        svg.style.display = 'none';
+        svg.innerHTML = chevronUp;
       } else {
         descriptionNode.style.display = 'none';
-        svg.style.display = 'inherit';
+        svg.innerHTML = chevronDown;
       }
     }
   }
@@ -44,15 +44,16 @@ function svgSelect (mode) {
 function resumeMode (mode) {
   if (mode == 'education') {
     educationList();
+    showDescription();
   }
   if (mode == 'jobs') {
     jobList();
+    showDescription();
   }
   if (mode == 'life') {
-    lifeList();
+    lifeDiv();
   }
   addListHead(mode);
-  showDescription();
   currentMode = mode;
 }
 
@@ -65,7 +66,7 @@ function addModes () {
   }
 }
 
-svgSelect(education);
-resumeMode('education');
+svgSelect(life);
+resumeMode('life');
 
 addModes();

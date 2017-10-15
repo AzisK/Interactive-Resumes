@@ -2,6 +2,7 @@ var mainPage = s('.heading');
 var designPage = s('.design-page');
 var view = s('.view');
 var mapCanvas = s('.map');
+var skillsText = s('.skills-text');
 
 var fit = s('.fit');
 

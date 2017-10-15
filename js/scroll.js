@@ -6,6 +6,9 @@ view.onscroll = function () {
 			animatedText = true;
 			animateText('#cross-platform', 'Cross-platform', 0, 110);
 		}
-		view.onscroll = function () { };
+	}
+
+	if (view.scrollTop <= 300) {
+		skillsText.style.opacity = view.scrollTop/300;
 	}
 };

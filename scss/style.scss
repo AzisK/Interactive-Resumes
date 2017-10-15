@@ -29,7 +29,7 @@ body {
   }
 }
 
-.device, .heading, svg {
+.device, .heading, svg, .enhance-animate {
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -55,6 +55,20 @@ h3 {
   font-size: 32px;
   letter-spacing: 1px;
   font-family: 'Indie Flower', cursive;
+}
+
+.enhanced {
+  color: $enhanced-text;
+}
+
+.enhance-animate {
+  background-image: linear-gradient(to right, transparent 0%, #444 100%);
+  background-size: 200%;
+  // display: initial;
+
+  &:hover {
+    background-position: -100%;
+  }
 }
 
 .col-30 {
@@ -146,11 +160,38 @@ svg.feather:hover {
 }
 
 .arrow  {
-  width: 42px;
+  width: 42px !important;
+  margin: 0 !important;
+
+  path {
+    fill: $enhanced-text;
+  }
 }
 
 .list {
+  width: 100%;
   padding: 0;
+
+  .life {
+    width: 100%;
+
+    .life-text {
+      width: 100%;
+
+      h1 {
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    }
+
+    img {
+      position: relative; 
+      height: 400px;
+      left: 50%;
+      transform: translateX(-50%); 
+      opacity: 0.4;
+    }
+  }
 
   .list-item {
     width: 100%;
@@ -160,7 +201,7 @@ svg.feather:hover {
     }
 
     svg, svg.feather:hover {
-      width: 32px;
+      width: 24px;
     }
 
     svg {
@@ -189,7 +230,6 @@ svg.feather:hover {
 
 .view {
   overflow-y: auto;
-  background: $black;
   color: #fff;
 }
 
@@ -241,8 +281,8 @@ svg.feather:hover {
     div {
       padding: 10px 0;
     }
-    h3 {
-      margin: 0 0 0 20px;
+    h3, h1 {
+      margin: 0 20px;
     }
     svg {
       margin-left: 30px;
@@ -317,8 +357,24 @@ svg.feather:hover {
   }
 }
 
+.skills {
+  width: 100%;
+  text-align: center;
+  background: $black;
+  padding-bottom: 10px;
+
+  .skills-text {
+    opacity: 0;
+
+    h1, h3 {
+      margin: 0;
+      padding: 20px 0;
+    }
+  }
+}
+
 .bottom-right {
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 20px;
 }
@@ -336,7 +392,6 @@ svg.feather:hover {
 .map {
   width: 100%;
   height: 80%;
-  background: $black;
 }
 
 .design-page {

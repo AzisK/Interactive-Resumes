@@ -1,8 +1,8 @@
 .increase-font {
-  animation: increase-font 1.7s cubic-bezier(0.79, -0.33, 0, 0.93); }
+  animation: increase-font 1s cubic-bezier(0.79, -0.33, 0, 0.93); }
 
 .increase-width {
-  animation: increase-width 1.7s ease-in-out; }
+  animation: increase-width 1s ease-in-out; }
 
 .bounceInLeft {
   animation-name: bounceInLeft;

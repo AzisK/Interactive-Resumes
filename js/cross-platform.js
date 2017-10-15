@@ -41,11 +41,13 @@ var mobileView = function (on) {
       mobile = true
       el.classList.add('block-mobile');
       el.querySelector('svg').classList.add('block-svg');
+      s('.arrow').style.bottom = '80px';
     } else {
       mobile = false;
       if (el.classList.contains('block-mobile')) {
         el.classList.remove('block-mobile');
         el.querySelector('svg').classList.remove('block-svg');
+        s('.arrow').style.bottom = '';
       }
     }
   });
