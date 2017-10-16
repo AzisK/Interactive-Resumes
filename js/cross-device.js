@@ -4,7 +4,7 @@ var goToDesign = function () {
   scrollIn(designPage);
   if (!animatedText) {
     animatedText = true;
-    animateText('#cross-platform', 'Cross-platform', 0, 100);
+    animateText('#cross-device', 'Cross-device', 0, 100);
  }
 }
 

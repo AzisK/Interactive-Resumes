@@ -4,7 +4,7 @@ view.onscroll = function () {
 	if (view.scrollTop > 100) {
 		if (!animatedText) {
 			animatedText = true;
-			animateText('#cross-platform', 'Cross-platform', 0, 110);
+			animateText('#cross-device', 'Cross-device', 0, 110);
 		}
 	}
 
