@@ -39,7 +39,7 @@ function lifeDiv() {
             I am a front-end developer trying to bring life to the internet and earn a dollar.
           </h3>
           <h3>
-            <a class="enhanced go-design enhance-animate">Try this page out!<a>
+            <a class="enhanced enhance-animate" onclick="goToDesign()">Try this page out!<a>
           </h3>
       </div>
       <img src="https://i.imgur.com/TiY7WFV.jpg">
