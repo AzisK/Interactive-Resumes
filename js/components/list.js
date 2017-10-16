@@ -3,18 +3,26 @@ var chevron = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class
 var chevronDown =  chevron + polylineDown + '</svg>';
 
 var polylineUp = '<polyline points="18 15 12 9 6 15"></polyline>';
-var chevronUp = chevron + polylineUp + '</svg>;'
+var chevronUp = chevron + polylineUp + '</svg>'
 
 var list = function (list) {
   var e = list;
   var template = '';
   for (var i = 0; i < e.length; i++) {
+    var display = '';
+    if (i == 0) { 
+      display = 'style="display:inherit"';
+      chevron = chevronUp;
+    } else {
+      chevron = chevronDown;
+    }
     template +=
       '<div class="list-item">'
-        + chevronDown + '<h3>' + e[i].name + e[i].placeLink
+        + chevron + '<h3>' + e[i].name + e[i].placeLink
         + e[i].place + '</a>' + e[i].time + '</h3>'
       + '</div>' 
-      + '<div class="description">' + '<p>' + e[i].description + '</p>'
+      + '<div class="description"' + display + '">' 
+        + '<p>' + e[i].description + '</p>'
       + '</div>';
   }
   return template;

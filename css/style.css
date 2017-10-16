@@ -153,6 +153,7 @@ svg.feather:hover {
 
 .view {
   overflow-y: auto;
+  overflow-x: hidden;
   color: #fff; }
 
 .page div :last-child svg {
@@ -225,7 +226,7 @@ svg.feather:hover {
       background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
     .resume-content .list div.description {
-      background: #dcdcdc;
+      background: #fff;
       width: 100%;
       display: none; }
       .resume-content .list div.description p {

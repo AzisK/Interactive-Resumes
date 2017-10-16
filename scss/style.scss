@@ -230,6 +230,7 @@ svg.feather:hover {
 
 .view {
   overflow-y: auto;
+  overflow-x: hidden;
   color: #fff;
 }
 
@@ -330,7 +331,7 @@ svg.feather:hover {
     }
 
     div.description {
-      background: #dcdcdc;
+      background: #fff;
       width: 100%;
       display: none;
 
