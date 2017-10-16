@@ -254,7 +254,7 @@ svg.feather:hover {
       padding: 20px 0; }
 
 .bottom-right {
-  position: fixed;
+  position: absolute;
   right: 20px;
   bottom: 20px; }
 
