@@ -36,7 +36,7 @@ function lifeDiv() {
             Hi, stranger. My name is Azis. 
           </h1>
           <h3>
-            I am a front-end developer trying to bring life to the internet and earn a dollar.
+            I am a software developer and a physicist trying to bring life to the internet and earn a dollar.
           </h3>
           <h3>
             <a class="enhanced enhance-animate" onclick="goToDesign()">Try this page out!<a>
