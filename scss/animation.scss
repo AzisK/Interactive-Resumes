@@ -6,7 +6,7 @@ $hearbeat: 0.86s;
 }
 
 .opate span { 
-  animation: leScaleYIn $anime-time cubic-bezier(1,-0.05, 0.57, 0.11);
+  animation: opate $anime-time cubic-bezier(1,-0.05, 0.57, 0.11);
 }
 
 @keyframes opate {

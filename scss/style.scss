@@ -4,7 +4,7 @@ $contact-page: #4448C8;
 $design-page: #82BD43;
 $background: #471eff;
 $device-color: #eee;
-$enhanced-text: #948dff;
+$enhanced: #948dff;
 $black: #111111;
 
 html {
@@ -27,9 +27,10 @@ body {
   ::-webkit-scrollbar {
     display: none;
   }
+  font-family: 'Indie Flower', cursive;
 }
 
-.device, .heading, svg, .enhance-animate {
+.device, .heading, svg, .enhance-animate, .button {
   transition: 200ms;
   transition-timing-function: ease-in-out;
 }
@@ -37,34 +38,29 @@ body {
 h1 {
   font-size: 42px;
   letter-spacing: 2px;
-  font-family: 'Indie Flower', cursive;
 }
 
 p {
   font-size: 22px;
-  font-family: 'Indie Flower';
 }
 
 h2 {
   letter-spacing: 2px;
-  font-family: 'Pangolin', cursive;
   font-size: 36px;
 }
 
 h3 {
   font-size: 32px;
   letter-spacing: 1px;
-  font-family: 'Indie Flower', cursive;
 }
 
-.enhanced {
-  color: $enhanced-text;
+.color-enhanced {
+  color: $enhanced;
 }
 
 .enhance-animate {
   background-image: linear-gradient(to right, transparent 0%, #444 100%);
   background-size: 200%;
-  // display: initial;
 
   &:hover {
     background-position: -100%;
@@ -88,11 +84,7 @@ h3 {
 }
 
 .active-svg {
-  stroke: $active-color !important;
-}
-
-.hover-color:hover {
-  color: $hover-color;
+  stroke: $black !important;
 }
 
 .fit {
@@ -100,15 +92,29 @@ h3 {
   top: 0;
 }
 
-svg {
-  width: 24px;
-}
+.button {
+  border-radius: 100%;
+  background: $enhanced;
+  width: 60px;
+  height: 60px;
 
-svg.feather {
-  path {
-    fill: none;
+  svg {
+    height: 100%;
   }
 
+  &.button--white {
+    background: #fff;
+  }
+}
+
+
+
+.hover-color:hover {
+  color: $hover-color;
+}
+
+svg {
+  width: 24px;
   stroke: #fff;
   fill: none;
   stroke-width: 2;
@@ -116,29 +122,19 @@ svg.feather {
   stroke-linejoin: round;
 }
 
-svg {
-  path {
-    fill: #fff;
-  }
-}
-
-svg:hover path {
-  fill: $hover-color;
-}
-
-svg.feather:hover {
+svg:hover {
   stroke: $hover-color;
-
-  path {
-    fill: none;
-  }
 }
 
 .resume svg {
-  width: 48px;
-  &.feather:hover {
-    width: 56px;
+  width: 42px;
+  &:hover {
+    // width: 46px;
   }
+}
+
+.resume .button:hover {
+  transparent: 0.6;
 }
 
 .page {
@@ -154,18 +150,13 @@ svg.feather:hover {
 
 .footer {
   svg {
-    stroke: $enhanced-text;
+    stroke: $enhanced;
     vertical-align: middle;
   }
 }
 
 .arrow  {
-  width: 42px !important;
-  margin: 0 !important;
-
-  path {
-    fill: $enhanced-text;
-  }
+  stroke: $enhanced;
 }
 
 .list {
@@ -200,7 +191,7 @@ svg.feather:hover {
       display: inline-block;
     }
 
-    svg, svg.feather:hover {
+    svg, svg:hover {
       width: 24px;
     }
 
@@ -213,7 +204,7 @@ svg.feather:hover {
     }
 
     a:-webkit-any-link {
-      color: $enhanced-text;
+      color: $enhanced;
     }
   }
 }
@@ -240,7 +231,6 @@ svg.feather:hover {
   }
 
   h2 {
-    font-family: 'Indie Flower', cursive;
     position: absolute;
     top: 30px;
     width: 100%;
@@ -255,11 +245,7 @@ svg.feather:hover {
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  background: #244ad6;
-  background: -moz-linear-gradient(left,  #244ad6 0%, #19e876 100%);
-  background: -webkit-linear-gradient(left,  #244ad6 0%,#19e876 100%);
-  background: linear-gradient(to right,  #244ad6 0%,#19e876 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1);
+  background: $enhanced;
 
   h1, h2 {
     margin: 0;
@@ -362,14 +348,20 @@ svg.feather:hover {
   width: 100%;
   text-align: center;
   background: $black;
-  padding-bottom: 10px;
+  padding: 20px 0;
 
   .skills-text {
+    width: 100%;
     opacity: 0;
 
     h1, h3 {
       margin: 0;
       padding: 20px 0;
+    }
+
+    h3 {
+      text-align: left;
+      padding: 10px 20px;
     }
   }
 }

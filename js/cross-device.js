@@ -99,7 +99,7 @@ function deviceView (mode) {
   var deviceMode = mode.classList[0] + '-view';
   var currentMode = device.classList[0];
   responsiveView(currentMode, deviceMode);  
-  scrollIn(mainPage);
+  scrollIn(headings);
 };
 
 (function addViews () {
@@ -111,5 +111,5 @@ function deviceView (mode) {
 }());
 
 iphoneButton.onclick = function () {
-  scrollIn(mainPage);
+  scrollIn(headings);
 }

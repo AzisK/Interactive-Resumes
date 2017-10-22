@@ -12,34 +12,31 @@ html, body {
 
 body {
   background: #471eff;
-  margin: 0; }
+  margin: 0;
+  font-family: 'Indie Flower', cursive; }
   body ::-webkit-scrollbar {
     display: none; }
 
-.device, .heading, svg, .enhance-animate {
+.device, .heading, svg, .enhance-animate, .button {
   transition: 200ms;
   transition-timing-function: ease-in-out; }
 
 h1 {
   font-size: 42px;
-  letter-spacing: 2px;
-  font-family: 'Indie Flower', cursive; }
+  letter-spacing: 2px; }
 
 p {
-  font-size: 22px;
-  font-family: 'Indie Flower'; }
+  font-size: 22px; }
 
 h2 {
   letter-spacing: 2px;
-  font-family: 'Pangolin', cursive;
   font-size: 36px; }
 
 h3 {
   font-size: 32px;
-  letter-spacing: 1px;
-  font-family: 'Indie Flower', cursive; }
+  letter-spacing: 1px; }
 
-.enhanced {
+.color-enhanced {
   color: #948dff; }
 
 .enhance-animate {
@@ -61,42 +58,41 @@ h3 {
   display: inline-block; }
 
 .active-svg {
-  stroke: #eac141 !important; }
-
-.hover-color:hover {
-  color: #EC412C; }
+  stroke: #111111 !important; }
 
 .fit {
   position: fixed;
   top: 0; }
 
-svg {
-  width: 24px; }
+.button {
+  border-radius: 100%;
+  background: #948dff;
+  width: 60px;
+  height: 60px; }
+  .button svg {
+    height: 100%; }
+  .button.button--white {
+    background: #fff; }
 
-svg.feather {
+.hover-color:hover {
+  color: #EC412C; }
+
+svg {
+  width: 24px;
   stroke: #fff;
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round; }
-  svg.feather path {
-    fill: none; }
 
-svg path {
-  fill: #fff; }
-
-svg:hover path {
-  fill: #EC412C; }
-
-svg.feather:hover {
+svg:hover {
   stroke: #EC412C; }
-  svg.feather:hover path {
-    fill: none; }
 
 .resume svg {
-  width: 48px; }
-  .resume svg.feather:hover {
-    width: 56px; }
+  width: 42px; }
+
+.resume .button:hover {
+  transparent: 0.6; }
 
 .page svg {
   width: 64px;
@@ -109,10 +105,7 @@ svg.feather:hover {
   vertical-align: middle; }
 
 .arrow {
-  width: 42px !important;
-  margin: 0 !important; }
-  .arrow path {
-    fill: #948dff; }
+  stroke: #948dff; }
 
 .list {
   width: 100%;
@@ -134,7 +127,7 @@ svg.feather:hover {
     width: 100%; }
     .list .list-item svg, .list .list-item h3 {
       display: inline-block; }
-    .list .list-item svg, .list .list-item svg.feather:hover {
+    .list .list-item svg, .list .list-item svg:hover {
       width: 24px; }
     .list .list-item svg {
       vertical-align: text-bottom; }
@@ -159,7 +152,6 @@ svg.feather:hover {
 .page div :last-child svg {
   margin: 0; }
 .page h2 {
-  font-family: 'Indie Flower', cursive;
   position: absolute;
   top: 30px;
   width: 100%;
@@ -172,11 +164,7 @@ svg.feather:hover {
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  background: #244ad6;
-  background: -moz-linear-gradient(left, #244ad6 0%, #19e876 100%);
-  background: -webkit-linear-gradient(left, #244ad6 0%, #19e876 100%);
-  background: linear-gradient(to right, #244ad6 0%, #19e876 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#244ad6', endColorstr='#19e876',GradientType=1); }
+  background: #948dff; }
   .heading h1, .heading h2 {
     margin: 0;
     display: inline-block; }
@@ -247,12 +235,16 @@ svg.feather:hover {
   width: 100%;
   text-align: center;
   background: #111111;
-  padding-bottom: 10px; }
+  padding: 20px 0; }
   .skills .skills-text {
+    width: 100%;
     opacity: 0; }
     .skills .skills-text h1, .skills .skills-text h3 {
       margin: 0;
       padding: 20px 0; }
+    .skills .skills-text h3 {
+      text-align: left;
+      padding: 10px 20px; }
 
 .bottom-right {
   position: absolute;

@@ -2,7 +2,7 @@
   animation: pulse 0.86s cubic-bezier(1, -0.05, 0.57, 0.11) infinite; }
 
 .opate span {
-  animation: leScaleYIn 1s cubic-bezier(1, -0.05, 0.57, 0.11); }
+  animation: opate 1s cubic-bezier(1, -0.05, 0.57, 0.11); }
 
 @keyframes opate {
   from {
